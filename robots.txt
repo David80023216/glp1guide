@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://david80023216.github.io/glp1guide/sitemap.xml
