@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLP-1 Guide — Your Complete GLP-1 Drug Resource</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+
+    .hero-gradient { background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 50%, #118a7e 100%); }
+    .card-hover { transition: all 0.2s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    .nav-link { transition: color 0.2s; }
+    .nav-link:hover { color: #1b6ca8; }
+    .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+    .tab-btn { transition: all 0.2s; border-bottom: 3px solid transparent; }
+    .tab-btn.active { border-bottom-color: #1b6ca8; color: #1b6ca8; font-weight: 600; }
+    .drug-card { transition: all 0.2s; border: 2px solid transparent; }
+    .drug-card.selected { border-color: #1b6ca8; background: #eff6ff; }
+    .tool-section { display: none; }
+    .tool-section.active { display: block; }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+    .fade-in { animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .sidebar-sticky { position: sticky; top: 80px; }
+    .ad-placeholder { background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 13px; }
+    .progress-bar { height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+    input[type=range] { accent-color: #1b6ca8; }
+    select, input[type=number], input[type=text] { border: 1px solid #d1d5db; border-radius: 6px; padding: 8px 12px; font-size: 14px; width: 100%; outline: none; transition: border-color 0.2s; }
+    select:focus, input:focus { border-color: #1b6ca8; box-shadow: 0 0 0 3px rgba(27,108,168,0.1); }
+    .btn-primary { background: #1b6ca8; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; border: none; transition: background 0.2s; }
+    .btn-primary:hover { background: #155e8e; }
+    table th { background: #f1f5f9; font-weight: 600; font-size: 13px; color: #475569; }
+    table td, table th { padding: 10px 14px; border-bottom: 1px solid #e2e8f0; font-size: 13px; }
+    .star { color: #f59e0b; }
+    .green { color: #16a34a; } .red { color: #dc2626; } .yellow { color: #d97706; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8618142757434912"
+     crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://david80023216.github.io/glp1guide/index.html" />
+  <meta property="og:title" content="GLP-1 Guide — Your Complete GLP-1 Drug Resource" />
+  <meta property="og:description" content="GLP-1 Guide — Your Complete GLP-1 Drug Resource" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://david80023216.github.io/glp1guide/index.html" />
+  <meta property="og:site_name" content="GLP-1 Guide" />
+  <meta name="description" content="Your complete guide to GLP-1 weight loss medications — compare Ozempic, Wegovy, Mounjaro, and Zepbound. Drug guides, cost tools, and insurance help." />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- TOP NAV -->
+<nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:#1b6ca8">
+        <span class="text-white font-bold text-sm">G1</span>
+      </div>
+      <span class="font-bold text-lg text-gray-900">GLP-1 Guide</span>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+      <a href="#" class="nav-link" onclick="showPage('compare')">Compare Drugs</a>
+      <a href="#" class="nav-link" onclick="showPage('dosing')">Dosing Calculator</a>
+      <a href="#" class="nav-link" onclick="showPage('cost')">Cost Calculator</a>
+      <a href="#" class="nav-link" onclick="showPage('foods')">Food Guide</a>
+      <a href="#" class="nav-link" onclick="showPage('sideeffects')">Side Effects</a>
+      <a href="#" class="nav-link" onclick="showPage('news')">News</a>
+    </div>
+    <button class="bg-blue-700 text-white text-sm px-4 py-2 rounded-lg font-medium hover:bg-blue-800" onclick="showPage('dosing')">
+      Get Started →
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page-section active fade-in">
+
+  <!-- HERO -->
+  <div class="hero-gradient text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="pill bg-white bg-opacity-20 text-white mb-4">🔬 GLP-1 Drug Resource Hub — Updated March 2026</div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+        Everything You Need to Know<br/>About GLP-1 Medications
+      </h1>
+      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        Free tools for comparing Ozempic, Wegovy, Mounjaro & Zepbound — dosing calculators, cost breakdowns, food guides, and more.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <button onclick="showPage('compare')" class="bg-white text-blue-800 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition">
+          Compare All Drugs →
+        </button>
+        <button onclick="showPage('dosing')" class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition">
+          Dosing Calculator
+        </button>
+        <button onclick="showPage('cost')" class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition">
+          Cost Calculator
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div>
+        <div class="text-2xl font-bold text-blue-700">25M+</div>
+        <div class="text-xs text-gray-500">Americans on GLP-1 by 2030</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-blue-700">4</div>
+        <div class="text-xs text-gray-500">FDA-approved drugs covered</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-blue-700">~20%</div>
+        <div class="text-xs text-gray-500">Avg body weight loss (Zepbound)</div>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-blue-700">Free</div>
+        <div class="text-xs text-gray-500">All tools, always free</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD UNIT (top) -->
+  <div class="max-w-6xl mx-auto px-4 mt-6">
+    <div class="ad-placeholder h-24 text-center">
+      <div>
+        <div class="text-sm font-semibold text-gray-400">Advertisement</div>
+        <div class="text-xs text-gray-400 mt-1">Google AdSense Unit — 728×90 Leaderboard</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLS GRID -->
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">Free GLP-1 Tools</h2>
+    <p class="text-gray-500 mb-6">Interactive tools built for patients — not doctors.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('compare')">
+        <div class="text-3xl mb-3">⚖️</div>
+        <div class="font-bold text-lg mb-1">Drug Comparison Tool</div>
+        <div class="text-sm text-gray-500 mb-3">Compare Ozempic, Wegovy, Mounjaro & Zepbound side-by-side across 12+ factors.</div>
+        <div class="text-blue-600 text-sm font-medium">Compare now →</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('dosing')">
+        <div class="text-3xl mb-3">💉</div>
+        <div class="font-bold text-lg mb-1">Dosing Calculator</div>
+        <div class="text-sm text-gray-500 mb-3">Get your complete dosing schedule — week by week, based on your drug and starting dose.</div>
+        <div class="text-blue-600 text-sm font-medium">Calculate schedule →</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('cost')">
+        <div class="text-3xl mb-3">💰</div>
+        <div class="font-bold text-lg mb-1">Cost Calculator</div>
+        <div class="text-sm text-gray-500 mb-3">See real monthly costs with insurance, without insurance, and compounded options.</div>
+        <div class="text-blue-600 text-sm font-medium">Check costs →</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('foods')">
+        <div class="text-3xl mb-3">🥗</div>
+        <div class="font-bold text-lg mb-1">Food Compatibility Guide</div>
+        <div class="text-sm text-gray-500 mb-3">What to eat and avoid on GLP-1 medications. Reduce nausea, maximize results.</div>
+        <div class="text-blue-600 text-sm font-medium">View food guide →</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('sideeffects')">
+        <div class="text-3xl mb-3">⚠️</div>
+        <div class="font-bold text-lg mb-1">Side Effects Lookup</div>
+        <div class="text-sm text-gray-500 mb-3">Search and understand every side effect — how common, how to manage, when to call your doctor.</div>
+        <div class="text-blue-600 text-sm font-medium">Look up side effects →</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm card-hover cursor-pointer" onclick="showPage('news')">
+        <div class="text-3xl mb-3">📰</div>
+        <div class="font-bold text-lg mb-1">GLP-1 News</div>
+        <div class="text-sm text-gray-500 mb-3">Latest research, FDA updates, and coverage & pricing news — updated weekly.</div>
+        <div class="text-blue-600 text-sm font-medium">Read latest →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK DRUG OVERVIEW -->
+  <div class="max-w-6xl mx-auto px-4 pb-10">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">The 4 Main GLP-1 Drugs — At a Glance</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl p-5 shadow-sm border-t-4" style="border-color:#3b82f6">
+        <div class="font-bold text-lg">Ozempic</div>
+        <div class="text-xs text-gray-400 mb-3">Semaglutide — Novo Nordisk</div>
+        <div class="text-sm space-y-2">
+          <div class="flex justify-between"><span class="text-gray-500">Approved for</span><span class="font-medium">Type 2 Diabetes</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Avg weight loss</span><span class="font-medium green">~15%</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">List price/mo</span><span class="font-medium red">~$935</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Dosing</span><span class="font-medium">Weekly injection</span></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border-t-4" style="border-color:#8b5cf6">
+        <div class="font-bold text-lg">Wegovy</div>
+        <div class="text-xs text-gray-400 mb-3">Semaglutide — Novo Nordisk</div>
+        <div class="text-sm space-y-2">
+          <div class="flex justify-between"><span class="text-gray-500">Approved for</span><span class="font-medium">Obesity / Weight Loss</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Avg weight loss</span><span class="font-medium green">~15%</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">List price/mo</span><span class="font-medium red">~$1,349</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Dosing</span><span class="font-medium">Weekly injection</span></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border-t-4" style="border-color:#f59e0b">
+        <div class="font-bold text-lg">Mounjaro</div>
+        <div class="text-xs text-gray-400 mb-3">Tirzepatide — Eli Lilly</div>
+        <div class="text-sm space-y-2">
+          <div class="flex justify-between"><span class="text-gray-500">Approved for</span><span class="font-medium">Type 2 Diabetes</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Avg weight loss</span><span class="font-medium green">~20%</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">List price/mo</span><span class="font-medium red">~$1,023</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Dosing</span><span class="font-medium">Weekly injection</span></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border-t-4" style="border-color:#10b981">
+        <div class="font-bold text-lg">Zepbound</div>
+        <div class="text-xs text-gray-400 mb-3">Tirzepatide — Eli Lilly</div>
+        <div class="text-sm space-y-2">
+          <div class="flex justify-between"><span class="text-gray-500">Approved for</span><span class="font-medium">Obesity / Weight Loss</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Avg weight loss</span><span class="font-medium green">~20%</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">List price/mo</span><span class="font-medium red">~$1,059</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Dosing</span><span class="font-medium">Weekly injection</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-3">* Prices are list prices without insurance. Actual cost varies. Always consult your doctor. Sources: FDA, manufacturer websites.</p>
+  </div>
+
+  <!-- SIDE AD + FAQ -->
+  <div class="max-w-6xl mx-auto px-4 pb-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="md:col-span-2">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Top Questions People Are Asking</h2>
+      <div class="space-y-3">
+        <details class="bg-white rounded-lg p-4 shadow-sm cursor-pointer">
+          <summary class="font-semibold text-gray-800">What is a GLP-1 medication?</summary>
+          <p class="mt-3 text-sm text-gray-600">GLP-1 (glucagon-like peptide-1) receptor agonists are a class of medications that mimic a natural hormone in your body. They slow stomach emptying, reduce appetite, and help regulate blood sugar. Originally developed for type 2 diabetes, several are now FDA-approved for weight loss.</p>
+        </details>
+        <details class="bg-white rounded-lg p-4 shadow-sm cursor-pointer">
+          <summary class="font-semibold text-gray-800">What's the difference between Ozempic and Wegovy?</summary>
+          <p class="mt-3 text-sm text-gray-600">Both contain semaglutide (same active ingredient) made by Novo Nordisk. The key differences: Ozempic is FDA-approved for type 2 diabetes and comes in doses up to 2mg. Wegovy is FDA-approved specifically for weight loss and goes up to 2.4mg — a higher maintenance dose. Wegovy typically causes more weight loss due to the higher max dose.</p>
+        </details>
+        <details class="bg-white rounded-lg p-4 shadow-sm cursor-pointer">
+          <summary class="font-semibold text-gray-800">How much weight can I lose on a GLP-1?</summary>
+          <p class="mt-3 text-sm text-gray-600">Clinical trial results vary by drug. Semaglutide (Wegovy) showed ~15% average body weight loss over 68 weeks. Tirzepatide (Zepbound) showed ~20% average weight loss — the highest of any approved medication. Individual results vary significantly based on diet, exercise, starting weight, and other factors.</p>
+        </details>
+        <details class="bg-white rounded-lg p-4 shadow-sm cursor-pointer">
+          <summary class="font-semibold text-gray-800">Does insurance cover GLP-1 drugs for weight loss?</summary>
+          <p class="mt-3 text-sm text-gray-600">Coverage varies widely. Most insurance covers GLP-1s for type 2 diabetes (Ozempic, Mounjaro) but many plans still don't cover obesity-specific versions (Wegovy, Zepbound). Medicare Part D began covering some GLP-1s for obesity in 2026. Use our <a href="#" onclick="showPage('cost')" class="text-blue-600 underline">Cost Calculator</a> for a breakdown by scenario.</p>
+        </details>
+        <details class="bg-white rounded-lg p-4 shadow-sm cursor-pointer">
+          <summary class="font-semibold text-gray-800">What foods should I avoid on GLP-1 medications?</summary>
+          <p class="mt-3 text-sm text-gray-600">High-fat and greasy foods dramatically worsen nausea on GLP-1s. Avoid fried foods, fast food, alcohol, and sugary drinks — especially in the first few months. See our full <a href="#" onclick="showPage('foods')" class="text-blue-600 underline">Food Compatibility Guide</a> for a complete list.</p>
+        </details>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <div class="ad-placeholder h-64">
+        <div class="text-center">
+          <div class="text-sm font-semibold text-gray-400">Advertisement</div>
+          <div class="text-xs text-gray-400 mt-1">300×250 Medium Rectangle</div>
+          <div class="text-xs text-gray-400 mt-1">$20–$50 CPC in health niche</div>
+        </div>
+      </div>
+      <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+        <div class="font-bold text-gray-900 mb-2">⚕️ Medical Disclaimer</div>
+        <p class="text-xs text-gray-600">This site is for informational purposes only. Always consult a qualified healthcare provider before starting, stopping, or changing any medication. Content is reviewed against FDA and NIH guidelines.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COMPARE PAGE ===== -->
+<div id="page-compare" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Tools</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 Drug Comparison Tool</h1>
+      <p class="text-gray-500 mt-1">Compare all 4 FDA-approved GLP-1 medications side by side.</p>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="ad-placeholder h-20 mb-6 text-center"><div><div class="text-xs font-semibold text-gray-400">Advertisement — 728×90</div></div></div>
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="text-left" style="width:200px">Factor</th>
+            <th class="text-center" style="color:#3b82f6">Ozempic</th>
+            <th class="text-center" style="color:#8b5cf6">Wegovy</th>
+            <th class="text-center" style="color:#f59e0b">Mounjaro</th>
+            <th class="text-center" style="color:#10b981">Zepbound</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="font-medium text-gray-700">Active Ingredient</td><td class="text-center">Semaglutide</td><td class="text-center">Semaglutide</td><td class="text-center">Tirzepatide</td><td class="text-center">Tirzepatide</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Manufacturer</td><td class="text-center">Novo Nordisk</td><td class="text-center">Novo Nordisk</td><td class="text-center">Eli Lilly</td><td class="text-center">Eli Lilly</td></tr>
+          <tr><td class="font-medium text-gray-700">FDA Approval</td><td class="text-center">Type 2 Diabetes</td><td class="text-center">Obesity / BMI ≥30</td><td class="text-center">Type 2 Diabetes</td><td class="text-center">Obesity / BMI ≥30</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Mechanism</td><td class="text-center">GLP-1 agonist</td><td class="text-center">GLP-1 agonist</td><td class="text-center">GLP-1 + GIP dual</td><td class="text-center">GLP-1 + GIP dual</td></tr>
+          <tr><td class="font-medium text-gray-700">Dosing Frequency</td><td class="text-center">Once weekly</td><td class="text-center">Once weekly</td><td class="text-center">Once weekly</td><td class="text-center">Once weekly</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Starting Dose</td><td class="text-center">0.25mg</td><td class="text-center">0.25mg</td><td class="text-center">2.5mg</td><td class="text-center">2.5mg</td></tr>
+          <tr><td class="font-medium text-gray-700">Max Dose</td><td class="text-center">2.0mg</td><td class="text-center">2.4mg</td><td class="text-center">15mg</td><td class="text-center">15mg</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Avg Weight Loss</td><td class="text-center green font-semibold">~15%</td><td class="text-center green font-semibold">~15%</td><td class="text-center green font-semibold">~20%</td><td class="text-center green font-semibold">~20%</td></tr>
+          <tr><td class="font-medium text-gray-700">List Price / Month</td><td class="text-center red font-semibold">~$935</td><td class="text-center red font-semibold">~$1,349</td><td class="text-center red font-semibold">~$1,023</td><td class="text-center red font-semibold">~$1,059</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">With Insurance</td><td class="text-center green font-semibold">~$25–$50</td><td class="text-center yellow font-semibold">Often not covered</td><td class="text-center green font-semibold">~$25–$50</td><td class="text-center yellow font-semibold">Varies widely</td></tr>
+          <tr><td class="font-medium text-gray-700">Heart Benefits</td><td class="text-center">✅ Proven (SUSTAIN-6)</td><td class="text-center">✅ Proven (SELECT)</td><td class="text-center">⏳ Pending trials</td><td class="text-center">⏳ Pending trials</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Nausea Risk</td><td class="text-center yellow">Moderate</td><td class="text-center yellow">Moderate</td><td class="text-center yellow">Moderate</td><td class="text-center yellow">Moderate-High</td></tr>
+          <tr><td class="font-medium text-gray-700">Pen Type</td><td class="text-center">Reusable pen</td><td class="text-center">Single-use autoinjector</td><td class="text-center">Single-use autoinjector</td><td class="text-center">Single-use autoinjector</td></tr>
+          <tr class="bg-gray-50"><td class="font-medium text-gray-700">Compounded Available</td><td class="text-center red">No (off shortage)</td><td class="text-center red">No (off shortage)</td><td class="text-center yellow">Limited</td><td class="text-center yellow">Limited</td></tr>
+          <tr><td class="font-medium text-gray-700">Best For</td><td class="text-center text-xs">Diabetics, insured patients</td><td class="text-center text-xs">Weight loss, heart disease risk</td><td class="text-center text-xs">Diabetics wanting max weight loss</td><td class="text-center text-xs">Weight loss, max results</td></tr>
+          <tr class="bg-blue-50"><td class="font-bold">Overall Rating</td>
+            <td class="text-center"><span class="star">★★★★</span>☆</td>
+            <td class="text-center"><span class="star">★★★★</span>☆</td>
+            <td class="text-center"><span class="star">★★★★★</span></td>
+            <td class="text-center"><span class="star">★★★★★</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">Sources: FDA prescribing information, manufacturer websites, clinical trial data (SUSTAIN, STEP, SURPASS, SURMOUNT programs). Prices are list prices and subject to change. Always consult your physician.</p>
+
+    <div class="mt-8 ad-placeholder h-24 text-center"><div><div class="text-xs font-semibold text-gray-400">Advertisement — 728×90 (Health CPCs: $20–$50 per click)</div></div></div>
+  </div>
+</div>
+
+<!-- ===== DOSING CALCULATOR ===== -->
+<div id="page-dosing" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Tools</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 Dosing Schedule Calculator</h1>
+      <p class="text-gray-500 mt-1">Enter your medication and start date — get a complete week-by-week dosing schedule.</p>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-1">
+      <div class="bg-white rounded-xl shadow-sm p-6 space-y-5 sidebar-sticky">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Select Medication</label>
+          <select id="dosing-drug" onchange="calcDosing()">
+            <option value="ozempic">Ozempic (Semaglutide)</option>
+            <option value="wegovy">Wegovy (Semaglutide)</option>
+            <option value="mounjaro">Mounjaro (Tirzepatide)</option>
+            <option value="zepbound">Zepbound (Tirzepatide)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Start Date</label>
+          <input type="date" id="dosing-start" value="2026-03-11" onchange="calcDosing()" style="width:100%">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Goal</label>
+          <select id="dosing-goal" onchange="calcDosing()">
+            <option value="standard">Standard schedule</option>
+            <option value="slow">Slow titration (minimize nausea)</option>
+          </select>
+        </div>
+        <button onclick="calcDosing()" class="btn-primary w-full">Generate Schedule</button>
+
+        <div class="ad-placeholder h-48 mt-4">
+          <div class="text-center text-xs text-gray-400">Ad Unit<br/>300×250</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-2">
+      <div id="dosing-result" class="space-y-3">
+        <!-- Generated dynamically -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COST CALCULATOR ===== -->
+<div id="page-cost" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Tools</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 Cost Calculator</h1>
+      <p class="text-gray-500 mt-1">Real monthly costs — with insurance, without insurance, and compounded options.</p>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-1">
+      <div class="bg-white rounded-xl shadow-sm p-6 space-y-5 sidebar-sticky">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Medication</label>
+          <select id="cost-drug" onchange="calcCost()">
+            <option value="ozempic">Ozempic</option>
+            <option value="wegovy">Wegovy</option>
+            <option value="mounjaro">Mounjaro</option>
+            <option value="zepbound">Zepbound</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Insurance Type</label>
+          <select id="cost-insurance" onchange="calcCost()">
+            <option value="commercial">Commercial Insurance</option>
+            <option value="medicare">Medicare</option>
+            <option value="medicaid">Medicaid</option>
+            <option value="none">No Insurance</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Duration (months)</label>
+          <input type="range" id="cost-months" min="1" max="24" value="12" oninput="document.getElementById('cost-months-val').textContent=this.value; calcCost()">
+          <div class="text-sm text-center text-gray-600 mt-1"><span id="cost-months-val">12</span> months</div>
+        </div>
+        <button onclick="calcCost()" class="btn-primary w-full">Calculate Total Cost</button>
+      </div>
+    </div>
+
+    <div class="md:col-span-2 space-y-5">
+      <div id="cost-result"><!-- Generated --></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOD GUIDE ===== -->
+<div id="page-foods" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Guide</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 Food Compatibility Guide</h1>
+      <p class="text-gray-500 mt-1">What to eat, what to avoid, and how to minimize side effects through diet.</p>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="ad-placeholder h-20 mb-6 text-center"><div><div class="text-xs font-semibold text-gray-400">Advertisement — 728×90</div></div></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <!-- GOOD FOODS -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-1">✅ Foods to Eat</h2>
+        <p class="text-sm text-gray-500 mb-4">These foods are well-tolerated and support your results:</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+            <span class="text-2xl">🥚</span>
+            <div><div class="font-semibold text-sm">Eggs & Lean Protein</div><div class="text-xs text-gray-600">High protein keeps you satiated. Easy on the stomach. Scrambled, boiled, or baked. Chicken, turkey, and fish also excellent.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+            <span class="text-2xl">🥦</span>
+            <div><div class="font-semibold text-sm">Non-Starchy Vegetables</div><div class="text-xs text-gray-600">Broccoli, spinach, zucchini, cucumber, and leafy greens. Low calorie, high fiber, minimal GI stress.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+            <span class="text-2xl">🫐</span>
+            <div><div class="font-semibold text-sm">Low-Sugar Fruits</div><div class="text-xs text-gray-600">Berries (blueberries, strawberries, raspberries) are ideal. Avoid large portions of high-sugar fruits like mangos and bananas.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+            <span class="text-2xl">🍗</span>
+            <div><div class="font-semibold text-sm">Lean Meats</div><div class="text-xs text-gray-600">Skinless chicken, turkey breast, white fish (tilapia, cod). Avoid fatty cuts of beef or pork while nausea is present.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+            <span class="text-2xl">🥣</span>
+            <div><div class="font-semibold text-sm">Oatmeal & Whole Grains</div><div class="text-xs text-gray-600">Plain oatmeal is easy to digest. Brown rice and quinoa in small portions are fine. Avoid heavy or refined carbs.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAD FOODS -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-1">🚫 Foods to Avoid</h2>
+        <p class="text-sm text-gray-500 mb-4">These dramatically increase nausea and side effects:</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+            <span class="text-2xl">🍟</span>
+            <div><div class="font-semibold text-sm">Fried & Greasy Foods</div><div class="text-xs text-gray-600">#1 cause of severe nausea on GLP-1s. French fries, fried chicken, potato chips, and anything deep-fried. Fat slows already-slowed gastric emptying further.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+            <span class="text-2xl">🍺</span>
+            <div><div class="font-semibold text-sm">Alcohol</div><div class="text-xs text-gray-600">GLP-1s change how your body processes alcohol. Many patients become more sensitive. Alcohol also causes blood sugar swings and worsens dehydration.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+            <span class="text-2xl">🍬</span>
+            <div><div class="font-semibold text-sm">High-Sugar Foods & Drinks</div><div class="text-xs text-gray-600">Sodas, candy, pastries, and sweetened coffee drinks cause blood sugar spikes that counteract GLP-1 benefits. Avoid especially around injection time.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+            <span class="text-2xl">🧀</span>
+            <div><div class="font-semibold text-sm">High-Fat Dairy</div><div class="text-xs text-gray-600">Whole milk, heavy cream, and full-fat cheese are common nausea triggers. Switch to low-fat yogurt and milk if dairy is a regular part of your diet.</div></div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+            <span class="text-2xl">🌭</span>
+            <div><div class="font-semibold text-sm">Processed & Fast Food</div><div class="text-xs text-gray-600">High sodium, preservatives, and fat content = a perfect storm for nausea. Most patients find fast food nearly intolerable in the first 2–3 months on GLP-1s.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPS SECTION -->
+    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">💡 Pro Tips for Eating on GLP-1s</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="font-semibold mb-2">Eat smaller portions</div>
+          <p class="text-xs text-gray-600">GLP-1 medications slow gastric emptying. Overeating — even of healthy foods — causes discomfort. Try 5–6 small meals instead of 3 large ones.</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="font-semibold mb-2">Stay hydrated</div>
+          <p class="text-xs text-gray-600">Nausea and vomiting increase dehydration risk. Aim for 8–10 glasses of water daily. Avoid drinking large amounts of water immediately before or after eating.</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-sm">
+          <div class="font-semibold mb-2">Time your injection</div>
+          <p class="text-xs text-gray-600">Many patients tolerate injections better on a day when they plan lighter activity. Inject on the same day each week at the same time for best consistency.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-placeholder h-24 mt-6 text-center"><div><div class="text-xs font-semibold text-gray-400">Advertisement — 728×90</div></div></div>
+  </div>
+</div>
+
+<!-- ===== SIDE EFFECTS PAGE ===== -->
+<div id="page-sideeffects" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Reference</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 Side Effects Guide</h1>
+      <p class="text-gray-500 mt-1">Search and understand side effects — how common, severity, and what to do.</p>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="flex gap-3 mb-6">
+      <input type="text" id="se-search" placeholder="Search side effects (e.g. nausea, hair loss, fatigue...)" oninput="filterSideEffects()" class="flex-1">
+      <select id="se-severity" onchange="filterSideEffects()" style="width:160px">
+        <option value="all">All severity</option>
+        <option value="common">Very Common</option>
+        <option value="moderate">Moderate</option>
+        <option value="serious">Serious</option>
+      </select>
+    </div>
+
+    <div id="se-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+  </div>
+</div>
+
+<!-- ===== NEWS PAGE ===== -->
+<div id="page-news" class="page-section fade-in">
+  <div class="bg-white border-b border-gray-200 py-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-sm text-gray-400 mb-1">Latest</div>
+      <h1 class="text-3xl font-bold text-gray-900">GLP-1 News & Research</h1>
+      <p class="text-gray-500 mt-1">The latest FDA updates, clinical research, and coverage news.</p>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="md:col-span-2 space-y-5">
+      <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+        <div class="flex items-center gap-2 mb-2"><span class="pill bg-blue-100 text-blue-700">FDA Update</span><span class="text-xs text-gray-400">March 2026</span></div>
+        <h3 class="font-bold text-lg mb-2">Medicare Part D Now Covers GLP-1s for Obesity — What You Need to Know</h3>
+        <p class="text-sm text-gray-600">Starting 2026, Medicare Part D plans are permitted to cover GLP-1 receptor agonists for obesity treatment. Coverage varies by plan, and prior authorization is typically required. Patients must have a BMI ≥30 or BMI ≥27 with a weight-related comorbidity.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+        <div class="flex items-center gap-2 mb-2"><span class="pill bg-green-100 text-green-700">Research</span><span class="text-xs text-gray-400">Feb 2026</span></div>
+        <h3 class="font-bold text-lg mb-2">New Study: Tirzepatide Shows Superior Weight Loss vs Semaglutide in Head-to-Head Trial</h3>
+        <p class="text-sm text-gray-600">A landmark head-to-head trial (SURMOUNT-5) published in NEJM confirmed that tirzepatide (Zepbound) produced significantly greater weight loss than semaglutide (Wegovy) at 72 weeks — an average of 47% more weight loss. This is the first direct comparison trial between the two leading drugs.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+        <div class="flex items-center gap-2 mb-2"><span class="pill bg-yellow-100 text-yellow-700">Policy</span><span class="text-xs text-gray-400">Jan 2026</span></div>
+        <h3 class="font-bold text-lg mb-2">FDA Issues Crackdown on Compounded GLP-1 Providers as Drug Shortage Ends</h3>
+        <p class="text-sm text-gray-600">The FDA has sent warning letters to over 30 telehealth companies marketing compounded semaglutide and tirzepatide now that both drugs are off the FDA shortage list. Compounded versions are generally no longer allowed under the drug shortage exception, though 503A compounding pharmacies may still prepare patient-specific formulations with a valid prescription.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-6 card-hover">
+        <div class="flex items-center gap-2 mb-2"><span class="pill bg-purple-100 text-purple-700">Research</span><span class="text-xs text-gray-400">Dec 2025</span></div>
+        <h3 class="font-bold text-lg mb-2">Long-Term Data: Most Patients Regain Weight After Stopping GLP-1 Medications</h3>
+        <p class="text-sm text-gray-600">A review of long-term follow-up data shows that most patients regain the majority of lost weight within 1–2 years of stopping GLP-1 therapy. Researchers are calling for reclassification of obesity as a chronic disease requiring long-term medical management, similar to hypertension or diabetes.</p>
+      </div>
+    </div>
+    <div class="space-y-5">
+      <div class="ad-placeholder h-64">
+        <div class="text-center text-xs text-gray-400">Ad — 300×250<br/>Health niche<br/>$20–$50 CPC</div>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-5">
+        <div class="font-bold mb-3">Quick Links</div>
+        <div class="space-y-2 text-sm">
+          <a href="#" class="text-blue-600 block hover:underline">FDA GLP-1 Approvals List</a>
+          <a href="#" class="text-blue-600 block hover:underline">NIH Weight Loss Drug Research</a>
+          <a href="#" class="text-blue-600 block hover:underline">STEP Clinical Trial Results</a>
+          <a href="#" class="text-blue-600 block hover:underline">SURMOUNT Trial Data</a>
+          <a href="#" class="text-blue-600 block hover:underline">Manufacturer Savings Programs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-10 mt-8">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div>
+      <div class="text-white font-bold text-lg mb-2">GLP-1 Guide</div>
+      <p class="text-xs leading-relaxed">The web's most complete resource for GLP-1 weight loss medication information. Free tools, drug comparisons, and up-to-date research.</p>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-2 text-sm">Tools</div>
+      <div class="space-y-1 text-xs">
+        <div class="cursor-pointer hover:text-white" onclick="showPage('compare')">Drug Comparison</div>
+        <div class="cursor-pointer hover:text-white" onclick="showPage('dosing')">Dosing Calculator</div>
+        <div class="cursor-pointer hover:text-white" onclick="showPage('cost')">Cost Calculator</div>
+        <div class="cursor-pointer hover:text-white" onclick="showPage('foods')">Food Guide</div>
+      </div>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-2 text-sm">Drugs Covered</div>
+      <div class="space-y-1 text-xs">
+        <div>Ozempic (Semaglutide)</div>
+        <div>Wegovy (Semaglutide)</div>
+        <div>Mounjaro (Tirzepatide)</div>
+        <div>Zepbound (Tirzepatide)</div>
+      </div>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-2 text-sm">Disclaimer</div>
+      <p class="text-xs leading-relaxed">This site is for informational purposes only. Not medical advice. Always consult a qualified healthcare provider. Content references FDA, NIH, and peer-reviewed clinical trial data.</p>
+    </div>
+  </div>
+  <div class="text-center text-xs mt-6 text-gray-600">© 2026 GLP-1 Guide · All rights reserved · Privacy Policy · Terms of Use</div>
+</footer>
+
+<script>
+// ===== NAVIGATION =====
+function showPage(page) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById('page-' + page);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo(0,0);
+  }
+  if (page === 'dosing') calcDosing();
+  if (page === 'cost') calcCost();
+  if (page === 'sideeffects') renderSideEffects();
+}
+
+// ===== DOSING CALCULATOR =====
+const dosingData = {
+  ozempic: {
+    name: 'Ozempic (Semaglutide)',
+    color: '#3b82f6',
+    standard: [
+      {weeks:'Weeks 1–4', dose:'0.25 mg', note:'Starter dose – not for therapeutic effect. Minimize side effects.'},
+      {weeks:'Weeks 5–8', dose:'0.5 mg', note:'First therapeutic dose. Most patients begin experiencing appetite reduction.'},
+      {weeks:'Weeks 9–12', dose:'0.5 mg', note:'Maintain at 0.5mg for at least 4 weeks before considering increase.'},
+      {weeks:'Weeks 13–16', dose:'1.0 mg', note:'Increase if additional glycemic control needed and 0.5mg tolerated well.'},
+      {weeks:'Week 17+', dose:'2.0 mg', note:'Maximum dose. Only if 1mg tolerated and additional control needed.'},
+    ],
+    slow: [
+      {weeks:'Weeks 1–8', dose:'0.25 mg', note:'Extended starter dose for sensitive patients. Helps with nausea tolerance.'},
+      {weeks:'Weeks 9–16', dose:'0.5 mg', note:'First therapeutic dose on slow titration.'},
+      {weeks:'Weeks 17–24', dose:'1.0 mg', note:'Increase to 1mg after 2 months at 0.5mg if well-tolerated.'},
+      {weeks:'Week 25+', dose:'2.0 mg', note:'Maximum dose — slow titration patients often stabilize at 1mg.'},
+    ]
+  },
+  wegovy: {
+    name: 'Wegovy (Semaglutide)',
+    color: '#8b5cf6',
+    standard: [
+      {weeks:'Weeks 1–4', dose:'0.25 mg', note:'Starter dose. Injection once weekly.'},
+      {weeks:'Weeks 5–8', dose:'0.5 mg', note:'Maintenance titration step 2.'},
+      {weeks:'Weeks 9–12', dose:'1.0 mg', note:'Maintenance titration step 3.'},
+      {weeks:'Weeks 13–16', dose:'1.7 mg', note:'Maintenance titration step 4.'},
+      {weeks:'Week 17+', dose:'2.4 mg', note:'Maintenance dose. FDA-approved max dose for weight management.'},
+    ],
+    slow: [
+      {weeks:'Weeks 1–8', dose:'0.25 mg', note:'Extended starter — 8 weeks at lowest dose.'},
+      {weeks:'Weeks 9–12', dose:'0.5 mg', note:'Step 2 on slow protocol.'},
+      {weeks:'Weeks 13–16', dose:'1.0 mg', note:'Step 3 on slow protocol.'},
+      {weeks:'Weeks 17–20', dose:'1.7 mg', note:'Step 4 on slow protocol.'},
+      {weeks:'Week 21+', dose:'2.4 mg', note:'Maintenance dose.'},
+    ]
+  },
+  mounjaro: {
+    name: 'Mounjaro (Tirzepatide)',
+    color: '#f59e0b',
+    standard: [
+      {weeks:'Weeks 1–4', dose:'2.5 mg', note:'Starting dose. Not therapeutic — allows body to adjust.'},
+      {weeks:'Weeks 5–8', dose:'5 mg', note:'First therapeutic dose. Significant appetite reduction expected.'},
+      {weeks:'Weeks 9–12', dose:'7.5 mg', note:'Increase after 4 weeks if additional control needed.'},
+      {weeks:'Weeks 13–16', dose:'10 mg', note:'Increase after 4 weeks if 7.5mg tolerated.'},
+      {weeks:'Weeks 17–20', dose:'12.5 mg', note:'Near-maximum dose.'},
+      {weeks:'Week 21+', dose:'15 mg', note:'Maximum FDA-approved dose.'},
+    ],
+    slow: [
+      {weeks:'Weeks 1–8', dose:'2.5 mg', note:'Extended starter dose for sensitive patients.'},
+      {weeks:'Weeks 9–16', dose:'5 mg', note:'Therapeutic start on slow protocol.'},
+      {weeks:'Weeks 17–24', dose:'7.5 mg', note:'Step 3 slow titration.'},
+      {weeks:'Weeks 25–32', dose:'10 mg', note:'Increase only if well-tolerated.'},
+      {weeks:'Week 33+', dose:'15 mg', note:'Maximum dose — many patients stabilize at 10–12.5mg.'},
+    ]
+  },
+  zepbound: {
+    name: 'Zepbound (Tirzepatide)',
+    color: '#10b981',
+    standard: [
+      {weeks:'Weeks 1–4', dose:'2.5 mg', note:'Starting dose for all patients.'},
+      {weeks:'Weeks 5–8', dose:'5 mg', note:'First therapeutic titration step.'},
+      {weeks:'Weeks 9–12', dose:'7.5 mg', note:'Optional — increase if 5mg tolerated well.'},
+      {weeks:'Weeks 13–16', dose:'10 mg', note:'Continue titration toward maintenance.'},
+      {weeks:'Weeks 17–20', dose:'12.5 mg', note:'Near-maximum for weight management.'},
+      {weeks:'Week 21+', dose:'15 mg', note:'Maximum maintenance dose for weight loss.'},
+    ],
+    slow: [
+      {weeks:'Weeks 1–8', dose:'2.5 mg', note:'Extended starter for nausea-prone patients.'},
+      {weeks:'Weeks 9–16', dose:'5 mg', note:'Slow increase — 8 weeks at each step.'},
+      {weeks:'Weeks 17–24', dose:'7.5 mg', note:'Continue slow titration.'},
+      {weeks:'Weeks 25–32', dose:'10 mg', note:'Most patients achieve good results here.'},
+      {weeks:'Week 33+', dose:'15 mg', note:'Max dose — optional for slow protocol patients.'},
+    ]
+  }
+};
+
+function calcDosing() {
+  const drug = document.getElementById('dosing-drug').value;
+  const goal = document.getElementById('dosing-goal').value;
+  const data = dosingData[drug];
+  const schedule = data[goal];
+  const container = document.getElementById('dosing-result');
+
+  let html = `
+    <div class="bg-white rounded-xl shadow-sm p-5 mb-2">
+      <h2 class="text-xl font-bold" style="color:${data.color}">${data.name}</h2>
+      <p class="text-sm text-gray-500 mt-1">${goal === 'slow' ? 'Slow titration protocol — extended time at each dose to minimize nausea.' : 'Standard FDA-recommended titration schedule.'}</p>
+    </div>`;
+
+  schedule.forEach((step, i) => {
+    const colors = ['bg-blue-50 border-blue-200','bg-purple-50 border-purple-200','bg-yellow-50 border-yellow-200','bg-green-50 border-green-200','bg-red-50 border-red-200','bg-gray-50 border-gray-200'];
+    const c = colors[i % colors.length];
+    html += `
+      <div class="bg-white rounded-xl shadow-sm p-5 border-l-4" style="border-color:${data.color}">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-xs font-semibold text-gray-400 mb-1">STEP ${i+1}</div>
+            <div class="font-bold text-gray-900">${step.weeks}</div>
+            <div class="text-sm text-gray-600 mt-1">${step.note}</div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-extrabold" style="color:${data.color}">${step.dose}</div>
+            <div class="text-xs text-gray-400">once weekly</div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  html += `
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+      <div class="font-semibold text-amber-800 mb-1">⚠️ Important</div>
+      <p class="text-xs text-amber-700">This schedule is based on FDA prescribing information. Your doctor may adjust dosing based on your individual response, blood sugar levels, and tolerability. Never change your dose without consulting your prescriber.</p>
+    </div>`;
+
+  container.innerHTML = html;
+}
+
+// ===== COST CALCULATOR =====
+const costData = {
+  ozempic:  { name:'Ozempic',  list:935,  commercial:35,  medicare:30,  medicaid:0,   compounded:300 },
+  wegovy:   { name:'Wegovy',   list:1349, commercial:500, medicare:200, medicaid:50,  compounded:null },
+  mounjaro: { name:'Mounjaro', list:1023, commercial:35,  medicare:30,  medicaid:0,   compounded:350 },
+  zepbound: { name:'Zepbound', list:1059, commercial:400, medicare:150, medicaid:50,  compounded:null },
+};
+
+function calcCost() {
+  const drug = document.getElementById('cost-drug').value;
+  const ins = document.getElementById('cost-insurance').value;
+  const months = parseInt(document.getElementById('cost-months').value) || 12;
+  const d = costData[drug];
+  const monthlyMap = { commercial: d.commercial, medicare: d.medicare, medicaid: d.medicaid, none: d.list };
+  const monthly = monthlyMap[ins];
+  const total = monthly * months;
+  const listTotal = d.list * months;
+  const savings = listTotal - total;
+
+  const ins_labels = { commercial:'Commercial Insurance', medicare:'Medicare', medicaid:'Medicaid', none:'No Insurance' };
+
+  let compHTML = d.compounded
+    ? `<div class="flex justify-between"><span class="text-gray-600">Compounded (telehealth)</span><span class="font-semibold">~$${d.compounded}/mo</span></div><p class="text-xs text-amber-700 mt-1 bg-amber-50 p-2 rounded">⚠️ Compounded GLP-1s are no longer widely available since drugs left FDA shortage list. Verify legality with your provider.</p>`
+    : `<div class="text-xs text-gray-500 bg-gray-50 p-2 rounded">Compounded versions not currently available for this drug (off FDA shortage list).</div>`;
+
+  document.getElementById('cost-result').innerHTML = `
+    <div class="bg-white rounded-xl shadow-sm p-6">
+      <h2 class="text-xl font-bold text-gray-900 mb-1">${d.name} — Cost Breakdown</h2>
+      <div class="pill bg-blue-100 text-blue-700 mb-4">${ins_labels[ins]}</div>
+      <div class="grid grid-cols-3 gap-4 mb-5">
+        <div class="bg-blue-50 rounded-lg p-4 text-center">
+          <div class="text-2xl font-extrabold text-blue-700">$${monthly.toLocaleString()}</div>
+          <div class="text-xs text-gray-500 mt-1">Est. monthly cost</div>
+        </div>
+        <div class="bg-green-50 rounded-lg p-4 text-center">
+          <div class="text-2xl font-extrabold text-green-700">$${total.toLocaleString()}</div>
+          <div class="text-xs text-gray-500 mt-1">${months}-month total</div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center">
+          <div class="text-2xl font-extrabold text-gray-700">$${savings.toLocaleString()}</div>
+          <div class="text-xs text-gray-500 mt-1">Savings vs list price</div>
+        </div>
+      </div>
+      <div class="space-y-2 text-sm border-t pt-4">
+        <div class="flex justify-between font-semibold text-gray-500 text-xs uppercase"><span>Scenario</span><span>Monthly</span></div>
+        <div class="flex justify-between"><span class="text-gray-600">List price (no coupons)</span><span class="font-semibold red">$${d.list.toLocaleString()}/mo</span></div>
+        <div class="flex justify-between"><span class="text-gray-600">Commercial insurance (typical)</span><span class="font-semibold green">$${d.commercial}/mo</span></div>
+        <div class="flex justify-between"><span class="text-gray-600">Medicare Part D (est.)</span><span class="font-semibold green">$${d.medicare}/mo</span></div>
+        <div class="flex justify-between"><span class="text-gray-600">Manufacturer savings card</span><span class="font-semibold green">~$25–$99/mo (if eligible)</span></div>
+        ${compHTML}
+      </div>
+    </div>
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+      <div class="font-semibold mb-1">💡 Cost-Saving Tips</div>
+      <ul class="text-xs text-gray-700 space-y-1 list-disc list-inside">
+        <li>Check the manufacturer's savings program — Novo Nordisk and Eli Lilly both offer $0/month programs for eligible commercially insured patients</li>
+        <li>GoodRx and CostPlus Drugs can reduce out-of-pocket costs for uninsured patients</li>
+        <li>Ask your doctor about patient assistance programs for low-income patients</li>
+        <li>If your insurance denies coverage, your doctor can appeal with medical necessity documentation</li>
+      </ul>
+    </div>
+    <p class="text-xs text-gray-400">Costs are estimates based on average reported prices as of early 2026. Actual costs vary by plan, pharmacy, and location. Always verify with your insurer and pharmacy.</p>
+  `;
+}
+
+// ===== SIDE EFFECTS =====
+const sideEffectsData = [
+  { name:'Nausea', severity:'common', pct:'44%', manage:'Eat smaller meals, avoid greasy/fatty foods, eat slowly. Usually improves within 4–8 weeks. Take injection with a light meal.' },
+  { name:'Diarrhea', severity:'common', pct:'30%', manage:'Stay hydrated. Avoid high-fiber foods during flares. Usually mild and temporary. BRAT diet helps (banana, rice, applesauce, toast).' },
+  { name:'Vomiting', severity:'common', pct:'24%', manage:'Avoid eating immediately before/after injection. Sip clear fluids. If vomiting is severe or persistent, contact your doctor.' },
+  { name:'Constipation', severity:'common', pct:'24%', manage:'Increase water intake and dietary fiber. Gentle exercise helps. MiraLax or fiber supplements may be recommended by your doctor.' },
+  { name:'Stomach Pain / Abdominal Discomfort', severity:'common', pct:'20%', manage:'Usually comes from slowed digestion. Eat smaller, more frequent meals. Avoid carbonated drinks.' },
+  { name:'Fatigue / Tiredness', severity:'common', pct:'11%', manage:'Often related to reduced calorie intake. Ensure adequate protein and nutrition. Usually improves within 4–6 weeks.' },
+  { name:'Headache', severity:'common', pct:'14%', manage:'Stay well-hydrated. Monitor blood sugar. Usually mild and resolves on its own.' },
+  { name:'Hair Loss', severity:'moderate', pct:'~5%', manage:'Usually caused by rapid weight loss, not the drug directly. Ensure adequate protein (0.8–1g per lb body weight). Usually temporary (telogen effluvium).' },
+  { name:'Injection Site Reactions', severity:'common', pct:'6%', manage:'Rotate injection sites (abdomen, thigh, upper arm). Keep medication at room temperature before injecting. Redness/bumps are usually minor.' },
+  { name:'Decreased Appetite', severity:'common', pct:'Very common', manage:'This is actually the intended effect. Ensure you still meet daily protein and micronutrient needs even with reduced appetite.' },
+  { name:'Heartburn / Acid Reflux (GERD)', severity:'moderate', pct:'~7%', manage:'Avoid lying down after eating. Elevate head of bed. Avoid spicy/acidic foods. Over-the-counter antacids may help; talk to your doctor.' },
+  { name:'Gallstones', severity:'moderate', pct:'~2–3%', manage:'Risk increases with rapid weight loss. Symptoms: severe abdominal pain, especially after eating. Contact your doctor immediately if suspected.' },
+  { name:'Low Blood Sugar (Hypoglycemia)', severity:'moderate', pct:'~4% (higher with insulin)', manage:'More common if also taking insulin or sulfonylureas. Monitor blood sugar. Keep fast-acting glucose (glucose tablets, juice) available.' },
+  { name:'Pancreatitis', severity:'serious', pct:'<1%', manage:'Rare but serious. Symptoms: severe, persistent abdominal pain radiating to back, nausea/vomiting. Stop medication and seek emergency care immediately.' },
+  { name:'Thyroid Tumors (MTC risk)', severity:'serious', pct:'Rare (animal studies)', manage:'GLP-1s carry a black box warning for thyroid C-cell tumors in rodents — human significance unclear. Do not use if personal/family history of MTC or MEN2 syndrome.' },
+  { name:'Kidney Problems', severity:'serious', pct:'Rare', manage:'Dehydration from nausea/vomiting can worsen kidney function. Stay hydrated. Report decreased urination, swelling, or unusual fatigue to your doctor.' },
+  { name:'Increased Heart Rate', severity:'moderate', pct:'~5%', manage:'Some patients notice elevated resting heart rate (avg +2–4 bpm). Usually not clinically significant. Report to doctor if symptomatic.' },
+  { name:'Muscle Loss', severity:'moderate', pct:'Varies', manage:'Rapid weight loss can reduce muscle mass. Resistance training and high protein intake (1g per lb body weight) are strongly recommended.' },
+];
+
+function renderSideEffects(filter = '', severity = 'all') {
+  const list = document.getElementById('se-list');
+  if (!list) return;
+  const filtered = sideEffectsData.filter(se =>
+    (severity === 'all' || se.severity === severity) &&
+    (!filter || se.name.toLowerCase().includes(filter.toLowerCase()) || se.manage.toLowerCase().includes(filter.toLowerCase()))
+  );
+  const colors = { common: 'bg-yellow-50 border-yellow-200', moderate: 'bg-orange-50 border-orange-200', serious: 'bg-red-50 border-red-200' };
+  const badges = { common: 'bg-yellow-100 text-yellow-800', moderate: 'bg-orange-100 text-orange-800', serious: 'bg-red-100 text-red-800' };
+  const labels = { common: 'Very Common', moderate: 'Moderate', serious: 'Serious' };
+  list.innerHTML = filtered.length ? filtered.map(se => `
+    <div class="bg-white rounded-xl shadow-sm p-5 border ${colors[se.severity]}">
+      <div class="flex justify-between items-start mb-2">
+        <div class="font-bold text-gray-900">${se.name}</div>
+        <div class="flex gap-2">
+          <span class="pill ${badges[se.severity]}">${labels[se.severity]}</span>
+          <span class="pill bg-gray-100 text-gray-600">${se.pct}</span>
+        </div>
+      </div>
+      <p class="text-xs text-gray-600">${se.manage}</p>
+    </div>
+  `).join('') : '<div class="col-span-2 text-center text-gray-400 py-10">No matching side effects found.</div>';
+}
+
+function filterSideEffects() {
+  const q = document.getElementById('se-search').value;
+  const s = document.getElementById('se-severity').value;
+  renderSideEffects(q, s);
+}
+
+// ===== INIT =====
+window.onload = function() {
+  calcDosing();
+  calcCost();
+  renderSideEffects();
+};
+</script>
+</body>
+</html>
